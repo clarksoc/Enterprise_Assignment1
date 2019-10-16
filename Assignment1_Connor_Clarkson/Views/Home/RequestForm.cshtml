@@ -1,4 +1,5 @@
-﻿
+﻿@using Assignment1_Connor_Clarkson.Models
+@model Assignment1_Connor_Clarkson.Models.Request
 @{
     ViewData["Title"] = "Equipment Request Form";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,42 +7,47 @@
 
 <h1>EquipmentRequest</h1>
 
-<form>
+<form asp-action="RequestForm" method="post">
+    <div asp-validation-summary="All"></div>
     <div class="form-group">
-        <label for="nameForm">Full Name</label>
-        <input type="text" class="form-control" id="nameForm" placeholder="First and Last Name">
+        <label asp-for="Name">Full Name</label>
+        <input type="text" class="form-control" asp-for="Name" placeholder="First and Last Name">
     </div>
     <div class="form-group">
-        <label for="emailForm">Email address</label>
-        <input type="email" class="form-control" id="emailForm" placeholder="name@example.com">
+        <label asp-for="Email">Email address</label>
+        <input type="email" class="form-control" asp-for="Email" placeholder="name@example.com">
     </div>
     <div class="form-group">
-        <label for="phoneForm">Phone Number</label>
-        <input type="number" class="form-control" id="phoneForm" placeholder="(XXX)-XXX-XXXX">
+        <label asp-for="Phone">Phone Number</label>
+        <input type="text" class="form-control" asp-for="Phone" placeholder="(XXX)-XXX-XXXX">
     </div>
 
     <div class="form-group">
-        <label for="roleSelect">Role</label>
-        <select class="form-control" id="roleSelect">
+        <label asp-for="Role">Role</label>
+        <select class="form-control" asp-for="Role">
             <option>Student</option>
             <option>Professor</option>
         </select>
     </div>
     <div class="form-group">
-        <label for="equipmentSelect">Equipment</label>
-        <select multiple class="form-control" id="equipmentSelect">
-            <option>Laptop</option>
-            <option>Phone</option>
-            <option>Tablet</option>
-            <option>Another</option>
+        <label asp-for="Equipment">Equipment</label>
+        <select multiple class="form-control" asp-for="Equipment" asp-items="Html.GetEnumSelectList<Category>()">
+            <option>Please Select an Equipment Category</option>
+
         </select>
     </div>
     <div class="form-group">
-        <label for="requestReason">Example textarea</label>
-        <textarea class="form-control" id="requestReason" rows="3"></textarea>
+        <label asp-for="Reason">Please State Your Reason for the Request: </label>
+        <textarea class="form-control" asp-for="Reason" rows="3" placeholder="Maximum 500 Characters"></textarea>
     </div>
     <div class="form-group">
-        <label for="dateForm">Duration</label>
-        <input type="number" class="form-control" id="dateForm" placeholder="How Many Days Are You Requesting?">
+        <label asp-for="Duration">Duration</label>
+        <input type="number" class="form-control" asp-for="Duration" placeholder="How Many Days Are You Requesting?">
     </div>
+    <div>
+        <button class="btn btn-primary" type="submit">
+            Submit Request Form
+        </button>
+    </div> 
+
 </form>

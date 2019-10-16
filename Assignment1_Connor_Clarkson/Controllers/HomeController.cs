@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Assignment1_Connor_Clarkson.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment1_Connor_Clarkson.View.Home
@@ -16,5 +17,20 @@ namespace Assignment1_Connor_Clarkson.View.Home
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult RequestForm(Request response)
+        {
+            if (ModelState.IsValid)
+            {
+                Repository.AddResponse(response);
+                return View("Confirmation", response);
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
     }
 }
