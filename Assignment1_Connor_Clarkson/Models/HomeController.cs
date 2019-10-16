@@ -12,5 +12,9 @@ namespace Assignment1_Connor_Clarkson.View.Home
         {
             return View();
         }
+        public IActionResult RequestForm()
+        {
+            return View();
+        }
     }
 }
