@@ -1,0 +1,42 @@
+﻿@model Request
+@using Assignment1_Connor_Clarkson
+@using Assignment1_Connor_Clarkson.Models
+
+@{
+    ViewData["Title"] = "RequestDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>RequestDetails</h1>
+
+<div class="panel-body">
+    <h2>Detailed Request Information</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Equipment</th>
+                <th>Role</th>
+                <th>Reason</th>
+                <th>Duration</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Name</td>
+                <td>@Model.Email</td>
+                <td>@Model.Phone</td>
+                <td>@Model.Role</td>
+                <td>@Model.Equipment</td>
+                <td>@Model.Reason</td>
+                <td>@Model.Duration</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

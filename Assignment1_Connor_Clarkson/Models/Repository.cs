@@ -8,14 +8,18 @@ namespace Assignment1_Connor_Clarkson.Models
     public static class Repository
     {
         public static int Count = 0;
-        private static List<Request> _requests = new List<Request>();
+        public static List<Request> ListRequests = new List<Request>();
 
         public static void AddResponse(Request request)
         {
 
             Count++;
             request.Id = Count;
-            _requests.Add(request);
+            ListRequests.Add(request);
+        }
+        public static List<Request> getRequestList()
+        {
+            return ListRequests;
         }
 
         public static List<Equipment> getEquipments = new List<Equipment>

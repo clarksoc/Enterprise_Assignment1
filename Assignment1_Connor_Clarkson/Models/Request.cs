@@ -36,7 +36,7 @@ namespace Assignment1_Connor_Clarkson.Models
         [Required(ErrorMessage = "Please Select an Equipment Category")]
         public Category Equipment { get; set; }
 
-        public int Id;
+        public int Id { get; set;}
 
     }
 }

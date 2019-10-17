@@ -28,7 +28,12 @@ namespace Assignment1_Connor_Clarkson
 
             app.UseStaticFiles();
             app.UseStatusCodePages();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

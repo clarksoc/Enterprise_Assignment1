@@ -1,0 +1,37 @@
+﻿@using Assignment1_Connor_Clarkson.Models
+@model Assignment1_Connor_Clarkson.Models.Request
+@{
+    ViewData["Title"] = "Requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Requests</h1>
+
+<div class="panel-body">
+    <h2>List of all the Requests</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Equipment</th>
+                <th>Role</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Request r in Repository.getRequestList())
+            {
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.Id</td>
+                    <td>@r.Equipment</td>
+                    <td>@r.Role</td>
+                    <td><a href="">
+                        Details
+                    </a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

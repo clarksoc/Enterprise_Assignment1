@@ -39,6 +39,26 @@ namespace Assignment1_Connor_Clarkson.View.Home
         {
             return View();
         }
+        public IActionResult Requests()
+        {
+            return View();
+        }
 
+        public IActionResult RequestDetails()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RequestDetails(int id)
+        {
+
+            var request = (Repository.ListRequests.Find(r => r.Id == id));
+            if (request == null)
+            {
+                return View("Index");
+            }
+            return View(request);
+        }
     }
 }
