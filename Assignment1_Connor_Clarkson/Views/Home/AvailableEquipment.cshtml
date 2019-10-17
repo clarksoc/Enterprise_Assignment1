@@ -1,0 +1,41 @@
+﻿@using Assignment1_Connor_Clarkson.Models
+@model Assignment1_Connor_Clarkson.Models.Request
+@{
+    ViewData["Title"] = "AvailableEquipment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Available Equipment</h1>
+
+<div class="panel-body">
+    <h2>Here is the list of all the equipment</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>EquipName</th>
+                <th>EquipId</th>
+                <th>EquipCategory</th>
+                <th>EquipDescription</th>
+                <th>EquipAvailable</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Equipment r in Repository.getEquipments)
+            {
+                @if (r.EquipAvailable == true)
+                {
+                    <tr>
+                        <td>@r.EquipName</td>
+                        <td>@r.EquipId</td>
+                        <td>@r.EquipCategory</td>
+                        <td>@r.EquipDescription</td>
+                        <td>@r.EquipAvailable</td>
+
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>

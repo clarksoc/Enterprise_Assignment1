@@ -35,6 +35,10 @@ namespace Assignment1_Connor_Clarkson.View.Home
         {
             return View();
         }
+        public IActionResult AvailableEquipment()
+        {
+            return View();
+        }
 
     }
 }
