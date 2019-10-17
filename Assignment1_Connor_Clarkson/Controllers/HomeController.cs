@@ -23,13 +23,17 @@ namespace Assignment1_Connor_Clarkson.View.Home
             if (ModelState.IsValid)
             {
                 Repository.AddResponse(response);
-                return View("Confirmation", response);
+                return View("Confirmation");
             }
             else
             {
                 return View();
             }
 
+        }
+        public IActionResult AllEquipment()
+        {
+            return View();
         }
 
     }

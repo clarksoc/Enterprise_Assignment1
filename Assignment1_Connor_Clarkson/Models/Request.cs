@@ -38,12 +38,5 @@ namespace Assignment1_Connor_Clarkson.Models
 
         public int Id;
 
-        public static IEnumerable<Request> GetRequests()
-        {
-            return new List<Request>
-            {
-
-            };
-        }
     }
 }
