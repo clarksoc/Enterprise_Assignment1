@@ -1,11 +1,12 @@
 ﻿@using Assignment1_Connor_Clarkson.Models
 @model Assignment1_Connor_Clarkson.Models.Request
 @{
-    ViewData["Title"] = "Requests";
+    ViewData["Title"] = "AvailableEquipment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Requests</h1>
+
 
 <div class="panel-body">
     <h2>List of all the Requests</h2>
@@ -27,7 +28,7 @@
                     <td>@r.Id</td>
                     <td>@r.Equipment</td>
                     <td>@r.Role</td>
-                    <td><a href="">
+                    <td><a href="RequestDetails/@r.Id" >
                         Details
                     </a></td>
                 </tr>

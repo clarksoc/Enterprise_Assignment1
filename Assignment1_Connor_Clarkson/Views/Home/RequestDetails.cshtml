@@ -13,30 +13,38 @@
     <h2>Detailed Request Information</h2>
     <table class="table table-sm table-striped table-bordered">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Equipment</th>
-                <th>Role</th>
-                <th>Reason</th>
-                <th>Duration</th>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Equipment</th>
+            <th>Role</th>
+            <th>Reason</th>
+            <th>Duration</th>
 
-            </tr>
+        </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>@Model.Id</td>
-                <td>@Model.Name</td>
-                <td>@Model.Email</td>
-                <td>@Model.Phone</td>
-                <td>@Model.Role</td>
-                <td>@Model.Equipment</td>
-                <td>@Model.Reason</td>
-                <td>@Model.Duration</td>
-            </tr>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Email</td>
+            <td>@Model.Phone</td>
+            <td>@Model.Equipment</td>
+            <td>@Model.Role</td>
+            <td>@Model.Reason</td>
+            <td>@Model.Duration</td>
+        </tr>
 
         </tbody>
     </table>
 </div>
+<div>
+    <button class="btn btn-primary" type="submit">
+        Accept
+    </button>
+    <button class="btn btn-warning" type="submit">
+        Deny
+    </button>
+</div> 

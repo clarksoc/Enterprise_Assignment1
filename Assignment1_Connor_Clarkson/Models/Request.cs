@@ -30,7 +30,7 @@ namespace Assignment1_Connor_Clarkson.Models
 
         [Required(ErrorMessage = "Please Enter a the Number of Days Requesting")]
         [RegularExpression("^[1-9][0-9]*$",
-            ErrorMessage = "Please Enter a Valid Reason")]
+            ErrorMessage = "Please Enter a Valid Number of Days")]
         public int Duration { get; set; }
 
         [Required(ErrorMessage = "Please Select an Equipment Category")]
